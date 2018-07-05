@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>First</title>
+</head>
+<body>
+<button>All Students</button>
+<button>Selected Students</button>
+<br>
+        {% for j in c %}
+<br>
+<header>
+  <h1>{{j.name}}</h1>
+</header>
+ <div>
+ <div style="background-color:blue">
+           <img src="{{j.profile_picture}}" class="w3-left w3-circle w3-margin-right" style="width:60px">
+      <p>{{j.name}} {{j.gender}} &nbsp;&nbsp;&nbsp;&nbsp;
+     <button>Sync Now</button></p>
+     <p>{{j.college}} {{j.city}}</p>
+     {% for k in d %}
+
+      {% ifequal j.dept_id  k.dept_id %}
+     <h1>yes</h1>
+     {% ifequal 1  k.dept_id %}
+
+     <p >{{k.short_name}}</p>
+     </div>
+      {% endifequal %}
+
+     {% ifequal 2  k.dept_id %}
+      <div style="background-color:white">
+            <img src="{{j.profile_picture}}" class="w3-left w3-circle w3-margin-right" style="width:60px">
+      <p>{{j.name}} {{j.gender}}  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+     <button>Sync Now</button></p>
+     <p>{{j.college}} {{j.city}}</p>
+     <p>{{k.short_name}}</p>
+      </div>
+      {% endifequal %}
+
+     {% ifequal 3  k.dept_id %}
+           <div style="background-color:gray">
+             <img src="{{j.profile_picture}}" class="w3-left w3-circle w3-margin-right" style="width:60px">
+      <p>{{j.name}} {{j.gender}} &nbsp;&nbsp;&nbsp;&nbsp;
+     <button>Sync Now</button></p>
+     <p>{{j.college}} {{j.city}}</p>
+     <p >{{k.short_name}}</p>
+           </div>
+      {% endifequal %}
+
+     {% ifequal 4  k.dept_id %}
+                <div style="background-color:yellow">
+             <img src="{{j.profile_picture}}" class="w3-left w3-circle w3-margin-right" style="width:60px">
+      <p>{{j.name}}  {{j.gender}}  &nbsp;&nbsp;&nbsp;&nbsp;
+     <button>Sync Now</button></p>
+     <p>{{j.college}} {{j.city}}</p>
+     <p>{{k.short_name}}</p>
+                </div>
+      {% endifequal %}
+
+      {% ifequal 5  k.dept_id %}
+                       <div style="background-color:green">
+            <img src="{{j.profile_picture}}" class="w3-left w3-circle w3-margin-right" style="width:60px">
+      <p>{{j.name}} {{j.gender}} &nbsp;&nbsp;&nbsp;&nbsp;
+     <button>Sync Now</button></p>
+     <p>{{j.college}} {{j.city}}</p>
+       <p>{{k.short_name}}</p>
+                       </div>
+      {% endifequal %}
+      {% endifequal %}
+     {% endfor %}
+     <br>
+    </div>
+{% endfor %}
+</body>
+</html>
